@@ -1,9 +1,9 @@
 const express = require("express");
+const AgentsController = require("../controllers/AgentController");
 
 const router = express.Router();
+const agents_controller = new AgentsController();
 
-router.get("/getAllAgents", (req, res) => {
-  return res.status(200).send("hello da users");
-});
+router.get("/getAllAgents", agents_controller.getAllAgents);
 
 module.exports = router;
